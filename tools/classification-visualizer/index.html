@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Classification Visualizer</h1>
+    <div id="controls">
+        <div class="control-group">
+            <label for="preset-select">Load Preset:</label>
+            <select id="preset-select">
+                <option value="none" selected>None</option>
+                <option value="linear">Linear</option>
+                <option value="circles">Two Circles</option>
+                <option value="nonlinear">Non-Linear</option>
+            </select>
+            <button id="load-preset">Load</button>
+        </div>
+        <div class="control-group">
+            <label for="algorithm-select">Algorithm:</label>
+            <select id="algorithm-select">
+                <option value="svm">SVM</option>
+                <option value="decision-tree">Decision Tree</option>
+                <option value="knn">K-Nearest Neighbors</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <button id="train-button">Train</button>
+            <button id="reset-button">Reset</button>
+        </div>
+    </div>
+    <div id="visualization">
+        <canvas id="plot" width="600" height="600"></canvas>
+    </div>
+    <div id="help">
+        <h2>How to use</h2>
+        <ul>
+            <li><b>Add data points:</b> Click on the canvas to add blue points. Hold the <b>Shift</b> key and click to add red points.</li>
+            <li><b>Load presets:</b> Choose a preset from the dropdown and click "Load".</li>
+            <li><b>Train a model:</b> Select an algorithm from the dropdown and click "Train". The decision boundary will be visualized on the canvas.</li>
+            <li><b>Reset:</b> Click "Reset" to clear all data and the trained model.</li>
+        </ul>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://www.lactame.com/lib/ml/6.0.0/ml.min.js"></script>
+    <script src="libsvm.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
